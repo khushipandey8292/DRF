@@ -21,8 +21,9 @@ import json
 # data=r.json()
 # print(data)
 
-
-URL="http://127.0.0.1:8000/stuupdate/"
+# used in function based
+# URL="http://127.0.0.1:8000/stuupdate/"
+URL="http://127.0.0.1:8000/studentapi/"
 def get_data(id=None):
     data={}
     if id is not None:
@@ -31,4 +32,38 @@ def get_data(id=None):
     r=requests.get(url=URL,data=json_data)
     data=r.json()
     print(data)
-get_data()
+# get_data(1)
+
+def post_data():
+    data={
+        'name':'khushboo',
+        'roll':160,
+        'city':'bareilly'
+    }
+    json_data=json.dumps(data)
+    r=requests.post(url=URL,data=json_data)
+    data=r.json()
+    print(data)
+post_data()
+
+def update_data():
+    data={
+        'id':'4',
+        'name':'khushi',
+        'city':'patna'
+    }
+    json_data=json.dumps(data)
+    r=requests.put(url=URL,data=json_data)
+    data=r.json()
+    print(data)
+# update_data()
+
+def delete_data():
+    data={
+        'id':'4'
+    }
+    json_data=json.dumps(data)
+    r=requests.delete(url=URL,data=json_data)
+    data=r.json()
+    print(data)
+# delete_data()

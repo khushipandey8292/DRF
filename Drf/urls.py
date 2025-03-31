@@ -21,7 +21,8 @@ from api2 import views as v2
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('stucreate/',v1.student_create),
-    path('stuupdate/',v2.student_api),
+    path('studentapi/',v2.StudentAPI.as_view()),
+    # path('stuupdate/',v2.student_api),
     # path('stuinfo/<int:pk>',views.student_detail),
     # path('stuinfo/',views.student_list),
 ]
